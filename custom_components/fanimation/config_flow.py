@@ -142,3 +142,53 @@ class FanimationConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             return True
         except ValueError:
             return False
+
+    @staticmethod
+    def async_get_options_flow(
+        config_entry: config_entries.ConfigEntry,
+    ) -> config_entries.OptionsFlow:
+        """Return the options flow handler."""
+        return FanimationOptionsFlow(config_entry)
+
+
+class FanimationOptionsFlow(config_entries.OptionsFlow):
+    """Handle options for an existing Fanimation config entry.
+
+    Allows changing the fan's MAC address after initial setup.
+    """
+
+    def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
+        """Initialize options flow."""
+        self._config_entry = config_entry
+
+    async def async_step_init(
+        self, user_input: dict[str, Any] | None = None
+    ) -> FlowResult:
+        """Show the options form with the current MAC address pre-filled."""
+        errors: dict[str, str] = {}
+        current_address = self._config_entry.data.get(CONF_ADDRESS, "")
+
+        if user_input is not None:
+            address = user_input[CONF_ADDRESS].strip().upper()
+
+            if not FanimationConfigFlow._validate_mac(address):
+                errors["base"] = "invalid_mac"
+            else:
+                # Update the config entry data with the new address
+                self.hass.config_entries.async_update_entry(
+                    self._config_entry,
+                    data={**self._config_entry.data, CONF_ADDRESS: address},
+                    title=f"Fanimation Fan ({address[-8:]})",
+                )
+                return self.async_create_entry(title="", data={})
+
+        return self.async_show_form(
+            step_id="init",
+            data_schema=vol.Schema(
+                {
+                    vol.Required(CONF_ADDRESS, default=current_address): str,
+                }
+            ),
+            errors=errors,
+            description_placeholders={"current": current_address},
+        )

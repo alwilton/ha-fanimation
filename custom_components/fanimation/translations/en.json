@@ -21,5 +21,19 @@
     "abort": {
       "already_configured": "This fan is already configured."
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Fanimation Fan Options",
+        "description": "Update the BLE MAC address of your Fanimation fan.\n\nCurrent address: {current}",
+        "data": {
+          "address": "MAC Address"
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "Invalid MAC address format. Use AA:BB:CC:DD:EE:FF"
+    }
   }
 }
