@@ -2,14 +2,14 @@
   "config": {
     "step": {
       "user": {
-        "title": "Fanimation Fan Setup",
+        "title": "Fanimation BT 3-Speed Fan Setup",
         "description": "Enter the BLE MAC address of your Fanimation fan.\n\nDiscovered fans: {discovered}",
         "data": {
           "address": "MAC Address"
         }
       },
       "bluetooth_confirm": {
-        "title": "Fanimation Fan Discovered",
+        "title": "Fanimation BT 3-Speed Fan Discovered",
         "description": "Found Fanimation fan: {name}. Do you want to set it up?"
       }
     },
@@ -25,7 +25,7 @@
   "options": {
     "step": {
       "init": {
-        "title": "Fanimation Fan Options",
+        "title": "Fanimation BT 3-Speed Fan Options",
         "description": "Select a discovered fan from the dropdown or type a MAC address manually.\n\n{discovered}\n\nCurrent: {current}",
         "data": {
           "address": "Fan MAC Address"
