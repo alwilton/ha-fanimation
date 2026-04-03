@@ -3,6 +3,7 @@
   "name": "Fanimation BT 3-Speed Fan",
   "codeowners": ["@alwilton"],
   "config_flow": true,
+  "dependencies": ["bluetooth"],
   "documentation": "https://github.com/alwilton/ha-fanimation-bt-3speed",
   "issue_tracker": "https://github.com/alwilton/ha-fanimation-bt-3speed/issues",
   "integration_type": "device",
@@ -16,5 +17,5 @@
     "bleak>=0.21.0",
     "bleak-retry-connector>=3.0.0"
   ],
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
