@@ -3,7 +3,7 @@
   "name": "Fanimation BT 3-Speed Fan",
   "codeowners": [],
   "config_flow": true,
-  "documentation": "",
+  "documentation": "https://github.com/alwilton/ha-fanimation-bt-3speed",
   "integration_type": "device",
   "iot_class": "local_polling",
   "bluetooth": [
@@ -15,5 +15,5 @@
     "bleak>=0.21.0",
     "bleak-retry-connector>=3.0.0"
   ],
-  "version": "1.1.0"
+  "version": "1.2.0"
 }
