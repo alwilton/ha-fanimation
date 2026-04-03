@@ -1,7 +1,7 @@
 {
   "domain": "fanimation",
   "name": "Fanimation BT 3-Speed Fan",
-  "codeowners": [],
+  "codeowners": ["@alwilton"],
   "config_flow": true,
   "documentation": "https://github.com/alwilton/ha-fanimation-bt-3speed",
   "issue_tracker": "https://github.com/alwilton/ha-fanimation-bt-3speed/issues",
@@ -16,5 +16,5 @@
     "bleak>=0.21.0",
     "bleak-retry-connector>=3.0.0"
   ],
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
