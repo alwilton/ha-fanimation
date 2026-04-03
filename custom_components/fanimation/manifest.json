@@ -1,18 +1,18 @@
 {
   "domain": "fanimation",
   "name": "Fanimation BT 3-Speed Fan",
-  "codeowners": ["@alwilton"],
-  "config_flow": true,
-  "dependencies": ["bluetooth"],
-  "documentation": "https://github.com/alwilton/ha-fanimation-bt-3speed",
-  "issue_tracker": "https://github.com/alwilton/ha-fanimation-bt-3speed/issues",
-  "integration_type": "device",
-  "iot_class": "local_polling",
   "bluetooth": [
     {
       "service_uuid": "0000e000-0000-1000-8000-00805f9b34fb"
     }
   ],
+  "codeowners": ["@alwilton"],
+  "config_flow": true,
+  "dependencies": ["bluetooth"],
+  "documentation": "https://github.com/alwilton/ha-fanimation-bt-3speed",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/alwilton/ha-fanimation-bt-3speed/issues",
   "requirements": [
     "bleak>=0.21.0",
     "bleak-retry-connector>=3.0.0"
